@@ -5,6 +5,11 @@ local module = {}
 local act = wezterm.action
 
 local function if_nvim(win, pane, key_if_true, key_if_false)
+  -- action = wezterm.action_callback(
+  --   function(win, pane) if_nvim(win, pane, key_assigment_1, key_assigment_2) end
+  -- )
+
+  -- https://wezfurlong.org/wezterm/config/lua/pane/get_foreground_process_info.html?h=pane
   if pane:get_foreground_process_info()['name'] == 'nvim' then
     win:perform_action(key_if_true, pane)
   else
@@ -82,15 +87,7 @@ function module.apply_to_config(config)
       mods = 'LEADER',
       action = act.AdjustPaneSize({ 'Right', 5 }),
     },
-    -- act.ActivatePaneDirection
-    -- {
-    --   key = 'I',
-    --   mods = 'OPT',
-    --   -- https://wezfurlong.org/wezterm/config/lua/pane/get_foreground_process_info.html?h=pane
-    --   action = wezterm.action_callback(function(win, pane)
-    --     if_nvim(win, pane, act.SendKey({ key = 'J', mods = 'ALT' }), act.AdjustPaneSize({ 'Right', 5 }))
-    --   end),
-    -- },
+
     table.unpack(config.keys),
   }
 end

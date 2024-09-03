@@ -36,10 +36,10 @@ function module.apply_to_config(config)
       { key = 'e', action = act.ActivatePaneDirection('Down') },
 
       -- resize
-      { key = 'n', action = act.ActivatePaneDirection('Left') },
-      { key = 'i', action = act.ActivatePaneDirection('Right') },
-      { key = 'u', action = act.ActivatePaneDirection('Up') },
-      { key = 'e', action = act.ActivatePaneDirection('Down') },
+      { key = 'N', action = act.AdjustPaneSize({ 'Left', 5 }) },
+      { key = 'I', action = act.AdjustPaneSize({ 'Right', 5 }) },
+      { key = 'U', action = act.AdjustPaneSize({ 'Up', 5 }) },
+      { key = 'E', action = act.AdjustPaneSize({ 'Down', 5 }) },
 
       -- split
       { key = 'h', action = act.SplitVertical({ domain = 'CurrentPaneDomain' }) },
