@@ -1,5 +1,7 @@
 local wezterm = require('wezterm')
 
+local keymaps = require('keymaps')
+
 -- wezterm.log_info("THIS IS A LOG!!")
 -- WEZTERM_LOG=info wezterm
 
@@ -31,5 +33,7 @@ local config = {
     bottom = 0,
   },
 }
+
+keymaps.apply_to_config(config)
 
 return config
