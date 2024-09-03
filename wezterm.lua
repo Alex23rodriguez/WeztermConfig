@@ -18,8 +18,8 @@ local config = {
 
   inactive_pane_hsb = {
     saturation = 0.9,
-    brightness = 0.8,
-    -- opacity = 0.0,
+    brightness = 0.5,
+    -- hue = 0.8,
   },
   -- inactive_pane_opacity = 0.5,
   window_background_opacity = 1,
@@ -32,6 +32,8 @@ local config = {
     top = 0,
     bottom = 0,
   },
+
+  keys = {}, -- defined in modules
 }
 
 keymaps.apply_to_config(config)

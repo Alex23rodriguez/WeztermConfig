@@ -91,6 +91,7 @@ function module.apply_to_config(config)
     --     if_nvim(win, pane, act.SendKey({ key = 'J', mods = 'ALT' }), act.AdjustPaneSize({ 'Right', 5 }))
     --   end),
     -- },
+    table.unpack(config.keys),
   }
 end
 
