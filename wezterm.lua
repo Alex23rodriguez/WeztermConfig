@@ -1,6 +1,7 @@
 local wezterm = require('wezterm')
 
 local keymaps = require('keymaps')
+local resize_keytable = require('resize_keytable')
 
 -- wezterm.log_info("THIS IS A LOG!!")
 -- WEZTERM_LOG=info wezterm
@@ -37,5 +38,6 @@ local config = {
 }
 
 keymaps.apply_to_config(config)
+resize_keytable.apply_to_config(config)
 
 return config
