@@ -15,7 +15,7 @@ local config = {
   use_fancy_tab_bar = false,
   hide_tab_bar_if_only_one_tab = true,
 
-  font = wezterm.font('Hack Nerd Font'),
+  font = wezterm.font('Hack Nerd Font', { weight = 'Bold' }),
 
   inactive_pane_hsb = {
     saturation = 0.9,
@@ -23,7 +23,7 @@ local config = {
     -- hue = 0.8,
   },
   -- inactive_pane_opacity = 0.5,
-  window_background_opacity = 1,
+  window_background_opacity = 0.95,
 
   window_decorations = 'RESIZE',
 
@@ -33,6 +33,7 @@ local config = {
     top = 0,
     bottom = 0,
   },
+  -- term = 'wezterm',
 
   keys = {}, -- defined in modules
 }
