@@ -26,10 +26,13 @@ function module.apply_to_config(config)
     {
       key = 'S',
       mods = 'CMD',
-      action = wezterm.action_callback(function(win, pane)
-        resurrect.state_manager.save_state(resurrect.workspace_state.get_workspace_state(), 'default')
-        resurrect.window_state.save_window_action()
-      end),
+      action = wezterm.action.PromptInputLine({
+        description = 'Enter session name',
+        action = wezterm.action_callback(function(window, pane, name)
+          resurrect.state_manager.save_state(resurrect.workspace_state.get_workspace_state(), name)
+          resurrect.window_state.save_window_action()
+        end),
+      }),
     },
     -- RESTORE STATE
     {
@@ -68,7 +71,7 @@ function module.apply_to_config(config)
         end, {
           title = 'Delete State',
           description = 'Select State to Delete and press Enter = accept, Esc = cancel, / = filter',
-          fuzzy_description = 'Search State to Delete: ',
+          fuzzy_description = 'Search Session to Delete: ',
           is_fuzzy = true,
         })
       end),
