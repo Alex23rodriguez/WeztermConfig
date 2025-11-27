@@ -23,8 +23,7 @@ local config = {
     -- hue = 0.8,
   },
   -- inactive_pane_opacity = 0.5,
-  window_background_opacity = 0.95,
-
+  -- window_background_opacity = 0.98,
   window_decorations = 'RESIZE',
 
   window_padding = {
@@ -40,5 +39,9 @@ local config = {
 
 keymaps.apply_to_config(config)
 resize_keytable.apply_to_config(config)
+
+-- PLUGINS
+local plugins_config = require('plugins')
+plugins_config.apply_to_config(config)
 
 return config
