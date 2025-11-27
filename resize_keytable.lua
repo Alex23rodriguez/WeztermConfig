@@ -51,6 +51,7 @@ function module.apply_to_config(config)
 
       -- quit
       { key = 'q', action = act.CloseCurrentPane({ confirm = false }) },
+      { key = 'k', action = act.CloseCurrentPane({ confirm = false }) },
 
       { key = 'Escape', action = 'PopKeyTable' },
     },
