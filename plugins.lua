@@ -76,6 +76,7 @@ function module.apply_to_config(config)
         })
       end),
     },
+    table.unpack(config.keys),
   }
 end
 

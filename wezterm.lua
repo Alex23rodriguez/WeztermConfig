@@ -3,6 +3,8 @@ local wezterm = require('wezterm')
 local keymaps = require('keymaps')
 local resize_keytable = require('resize_keytable')
 
+-- PLUGINS
+local plugins_config = require('plugins')
 -- wezterm.log_info("THIS IS A LOG!!")
 -- WEZTERM_LOG=info wezterm
 
@@ -37,11 +39,10 @@ local config = {
   keys = {}, -- defined in modules
 }
 
+-- remember to call table.unpack(config.keys) at the end of new definition
 keymaps.apply_to_config(config)
 resize_keytable.apply_to_config(config)
 
--- PLUGINS
-local plugins_config = require('plugins')
 plugins_config.apply_to_config(config)
 
 return config
